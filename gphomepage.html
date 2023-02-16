@@ -1,0 +1,58 @@
+
+
+<html>
+<head>
+
+<title>MY LOCAL GP</title>
+<link rel="stylesheet" type="text/css" href="webstyle.css">
+
+<script language="JavaScript">
+
+var puma = new Array(6);
+var curpuma = 0;
+var startRunning;
+puma[0] = "puma0.JPG";
+puma[1] = "puma1.JPG";
+puma[2] = "puma2.JPG";
+puma[3] = "puma3.JPG";
+puma[4] = "puma4.JPG";
+ 
+function marathon() {
+	if (curpuma == 4) 
+		{
+		
+		document.animation.src = puma[curpuma];
+		curpuma = 0;
+	}
+	else
+	{
+
+	document.animation.src = puma[curpuma];
+	++curpuma;
+	}
+}
+
+</script>
+</head>
+
+
+<body>
+<img style="float:right;" src="doclogo.png" alt="Trulli" width="100" height="120">
+<h1>WELCOME TO YOUR LOCAL GP</h1>
+<br><br>
+<a href="doctor/doctor.php">LOGIN AS DOCTOR</a>
+<br><br>
+<a href="patient/patient.php">LOGIN AS PATIENT</a>
+<br><br>
+<a href="admin/admin.php">ADMIN</a>
+
+<p><img id="pm" src ="puma0.jpg" name = "animation" width="200" height="140"></p>
+
+<script>
+document.getElementById("pm").innerHTML = setInterval('marathon()',100);
+</script>
+
+
+
+</body>
+</html>
